@@ -1,0 +1,38 @@
+---
+title: "Week 2 Leaflet Project"
+author: "George Pitsavas"
+date: "17 August 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+Creating a web page using R Markdown that features a map created with Leaflet as part of Peer-graded Assignment: R Markdown and Leafle of coursera R specialazation.
+
+
+## Data source
+My map is about London's city monuments.
+Info was taken from this site https://www.latlong.net/country/united-kingdom-235.html
+
+## Monuments in London
+
+```{r,echo=FALSE}
+library(leaflet)
+```
+
+
+
+```{r,echo=FALSE}
+map <- leaflet() %>% addTiles() %>%
+addMarkers(lat=51.508530, lng=-0.076132, popup = "The Tower of London, London, UK ") %>%
+  addMarkers(lat=51.508610, lng=-0.163611, popup = "Hyde Park, London, the UK") %>%
+addMarkers(lat=51.510357, lng=-0.116773, popup = "Big Ben, Westminster, London, UK") %>%
+addMarkers(lat=51.501476, lng=  -0.140634, popup = "Buckingham Palace, London, UK") %>%
+addMarkers(lat=51.515419, lng= -0.141099, popup = "Oxford Street, London, UK") %>%    
+addMarkers(lat= 51.503399, lng= -0.119519, popup = "The London Eye, London, UK ")  
+map
+```
+
